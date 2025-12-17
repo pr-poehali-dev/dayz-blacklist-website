@@ -21,11 +21,7 @@ const Index = () => {
     { id: 4, name: 'Оружейный набор', price: 699, description: 'Базовое вооружение', icon: 'Crosshair' },
   ];
 
-  const characters = [
-    { id: 1, name: 'Медик', description: 'Специалист по первой помощи', image: 'https://cdn.poehali.dev/projects/bf035f68-ec39-4ee1-a671-0424931be678/files/24525192-084b-4709-8535-9cfb05f99d28.jpg' },
-    { id: 2, name: 'Солдат', description: 'Боевой специалист', image: 'https://cdn.poehali.dev/projects/bf035f68-ec39-4ee1-a671-0424931be678/files/24525192-084b-4709-8535-9cfb05f99d28.jpg' },
-    { id: 3, name: 'Инженер', description: 'Мастер ремонта', image: 'https://cdn.poehali.dev/projects/bf035f68-ec39-4ee1-a671-0424931be678/files/24525192-084b-4709-8535-9cfb05f99d28.jpg' },
-  ];
+
 
   const leaderboard = [
     { rank: 1, name: 'Shadow_Killer', kills: 1543, deaths: 234 },
@@ -56,7 +52,7 @@ const Index = () => {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="text-2xl font-bold text-[#4a5c3e]">DayZ BlackList</div>
           <div className="hidden md:flex gap-6">
-            {['home', 'about', 'news', 'rules', 'characters', 'shop', 'leaderboard', 'contact'].map((item) => (
+            {['home', 'about', 'news', 'rules', 'shop', 'leaderboard', 'contact'].map((item) => (
               <button
                 key={item}
                 onClick={() => scrollToSection(item)}
@@ -66,7 +62,6 @@ const Index = () => {
                  item === 'about' ? 'О сервере' :
                  item === 'news' ? 'Новости' :
                  item === 'rules' ? 'Правила' :
-                 item === 'characters' ? 'Персонажи' :
                  item === 'shop' ? 'Магазин' :
                  item === 'leaderboard' ? 'Лидеры' : 'Контакты'}
               </button>
@@ -194,31 +189,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Characters Section */}
-      <section id="characters" className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center">
-            Персонажи и <span className="text-[#4a5c3e]">Классы</span>
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {characters.map((char) => (
-              <Card key={char.id} className="bg-black/50 border-[#4a5c3e]/30 overflow-hidden hover:scale-105 transition-transform">
-                <div className="h-64 overflow-hidden">
-                  <img 
-                    src={char.image} 
-                    alt={char.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-white">{char.name}</CardTitle>
-                  <CardDescription className="text-gray-400">{char.description}</CardDescription>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Shop Section */}
       <section id="shop" className="py-20 px-4 bg-gradient-to-b from-black to-[#0a0a0a]">
