@@ -46,11 +46,19 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div 
+      className="min-h-screen text-white"
+      style={{
+        backgroundImage: 'url(https://cdn.poehali.dev/projects/bf035f68-ec39-4ee1-a671-0424931be678/files/bfc2146c-04f5-434f-8fb4-88cb4b8d8940.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-md z-50 border-b border-[#4a5c3e]/30">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-2xl font-bold text-[#4a5c3e]">DayZ BlackList</div>
+          <div className="text-4xl font-bold text-[#dc2626] drop-shadow-[0_0_15px_rgba(220,38,38,0.8)]">DayZ BlackList</div>
           <div className="hidden md:flex gap-6">
             {['home', 'about', 'news', 'rules', 'shop', 'leaderboard', 'contact'].map((item) => (
               <button
@@ -85,8 +93,8 @@ const Index = () => {
       >
         <div className="absolute inset-0 bg-black/60"></div>
         <div className="relative z-10 text-center px-4">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in">
-            DAYZ <span className="text-[#dc2626]">BLACKLIST</span>
+          <h1 className="text-7xl md:text-9xl font-bold mb-6 animate-fade-in drop-shadow-[0_0_30px_rgba(220,38,38,0.9)]">
+            DAYZ <span className="text-[#dc2626] drop-shadow-[0_0_40px_rgba(220,38,38,1)]">BLACKLIST</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-300">
             Выживай в самом жестком мире постапокалипсиса
@@ -105,13 +113,13 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-4 bg-gradient-to-b from-black to-[#0a0a0a]">
+      <section id="about" className="py-20 px-4 bg-black/70 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             О <span className="text-[#4a5c3e]">Сервере</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="bg-black/50 border-[#4a5c3e]/30">
+            <Card className="bg-black/70 border-[#4a5c3e]/30 backdrop-blur-sm">
               <CardHeader>
                 <Icon name="Users" className="text-[#0ea5e9] mb-4" size={40} />
                 <CardTitle className="text-white">Активное Сообщество</CardTitle>
@@ -120,7 +128,7 @@ const Index = () => {
                 Более 1000 активных игроков ежедневно
               </CardContent>
             </Card>
-            <Card className="bg-black/50 border-[#4a5c3e]/30">
+            <Card className="bg-black/70 border-[#4a5c3e]/30 backdrop-blur-sm">
               <CardHeader>
                 <Icon name="Shield" className="text-[#f97316] mb-4" size={40} />
                 <CardTitle className="text-white">Защита от Читеров</CardTitle>
@@ -129,7 +137,7 @@ const Index = () => {
                 Активная администрация 24/7
               </CardContent>
             </Card>
-            <Card className="bg-black/50 border-[#4a5c3e]/30">
+            <Card className="bg-black/70 border-[#4a5c3e]/30 backdrop-blur-sm">
               <CardHeader>
                 <Icon name="Zap" className="text-[#dc2626] mb-4" size={40} />
                 <CardTitle className="text-white">Частые Ивенты</CardTitle>
@@ -143,14 +151,14 @@ const Index = () => {
       </section>
 
       {/* News Section */}
-      <section id="news" className="py-20 px-4">
+      <section id="news" className="py-20 px-4 bg-black/60 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             <span className="text-[#0ea5e9]">Новости</span>
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {news.map((item) => (
-              <Card key={item.id} className="bg-black/50 border-[#4a5c3e]/30 hover:border-[#0ea5e9] transition-all">
+              <Card key={item.id} className="bg-black/70 border-[#4a5c3e]/30 hover:border-[#0ea5e9] transition-all backdrop-blur-sm">
                 <CardHeader>
                   <Badge className={`w-fit mb-2 ${
                     item.type === 'update' ? 'bg-[#4a5c3e]' :
@@ -169,12 +177,12 @@ const Index = () => {
       </section>
 
       {/* Rules Section */}
-      <section id="rules" className="py-20 px-4 bg-black/30">
+      <section id="rules" className="py-20 px-4 bg-black/70 backdrop-blur-sm">
         <div className="container mx-auto max-w-3xl">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Правила <span className="text-[#dc2626]">Сервера</span>
           </h2>
-          <Card className="bg-black/50 border-[#dc2626]/30">
+          <Card className="bg-black/70 border-[#dc2626]/30 backdrop-blur-sm">
             <CardContent className="pt-6">
               <ul className="space-y-4">
                 {rules.map((rule, index) => (
@@ -189,17 +197,15 @@ const Index = () => {
         </div>
       </section>
 
-
-
       {/* Shop Section */}
-      <section id="shop" className="py-20 px-4 bg-gradient-to-b from-black to-[#0a0a0a]">
+      <section id="shop" className="py-20 px-4 bg-black/60 backdrop-blur-sm">
         <div className="container mx-auto">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Магазин <span className="text-[#f97316]">Донатов</span>
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {shopItems.map((item) => (
-              <Card key={item.id} className="bg-black/50 border-[#f97316]/30 hover:border-[#f97316] transition-all">
+              <Card key={item.id} className="bg-black/70 border-[#f97316]/30 hover:border-[#f97316] transition-all backdrop-blur-sm">
                 <CardHeader>
                   <Icon name={item.icon as any} className="text-[#f97316] mb-4" size={40} />
                   <CardTitle className="text-white">{item.name}</CardTitle>
@@ -220,12 +226,12 @@ const Index = () => {
       </section>
 
       {/* Leaderboard Section */}
-      <section id="leaderboard" className="py-20 px-4">
+      <section id="leaderboard" className="py-20 px-4 bg-black/70 backdrop-blur-sm">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-4xl font-bold mb-12 text-center">
             Таблица <span className="text-[#0ea5e9]">Лидеров</span>
           </h2>
-          <Card className="bg-black/50 border-[#0ea5e9]/30">
+          <Card className="bg-black/70 border-[#0ea5e9]/30 backdrop-blur-sm">
             <CardContent className="pt-6">
               <div className="space-y-4">
                 {leaderboard.map((player) => (
@@ -266,7 +272,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 bg-black/30">
+      <section id="contact" className="py-20 px-4 bg-black/60 backdrop-blur-sm">
         <div className="container mx-auto max-w-2xl text-center">
           <h2 className="text-4xl font-bold mb-8">
             Контакты <span className="text-[#4a5c3e]">Поддержки</span>
@@ -290,7 +296,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black border-t border-[#4a5c3e]/30 py-8 px-4">
+      <footer className="bg-black/80 backdrop-blur-sm border-t border-[#4a5c3e]/30 py-8 px-4">
         <div className="container mx-auto text-center text-gray-500">
           <p>© 2024 DayZ BlackList. Все права защищены.</p>
         </div>
